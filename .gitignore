@@ -3,3 +3,6 @@ ori
 *-nginx-plus.sh
 ori
 volumes
+
+nginx-repo.crt
+nginx-repo.key
