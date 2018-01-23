@@ -1,6 +1,6 @@
-FROM ubuntu:16.10
+FROM ubuntu:16.04
 
-MAINTAINER Fabrizio Torelli <hellgate75@gmail.com>
+MAINTAINER Sven Agnew
 
 ENV DEBIAN_FRONTEND=noninteractive \
     PATH=$PATH:/usr/local/bin \
@@ -22,11 +22,9 @@ ADD nginx-repo.key /etc/ssl/nginx/
 # Get other files required for installation
 RUN wget -q -O - http://nginx.org/keys/nginx_signing.key | apt-key add -
 RUN wget -q -O /etc/apt/apt.conf.d/90nginx https://cs.nginx.com/static/files/90nginx
-RUN printf "deb https://plus-pkgs.nginx.com/ubuntu `lsb_release -cs` nginx-plus\n" >/etc/apt/sources.list.d/nginx-plus.list
+RUN printf "deb https://plus-pkgs.nginx.com/ubuntu `lsb_release -cs` nginx-plus\n" | sudo tee /etc/apt/sources.list.d/nginx-plus.list
     # Install NGINX Plus
-RUN apt-get update && apt-get install -y nginx-plus  nginx-plus-module-geoip nginx-plus-module-image-filter \
-    nginx-plus-module-perl nginx-plus-module-xslt nginx-plus-module-njs nginx-plus-module-headers-more \
-    nginx-plus-module-lua nginx-plus-module-passenger nginx-plus-module-rtmp nginx-plus-module-set-misc && \
+RUN apt-get update && apt-get install -y nginx-plus && \
     apt-get clean && \
     apt-get -y autoclean && \
     rm -rf /var/lib/apt/lists/* && \
