@@ -2,6 +2,8 @@
 
 Docker Image for Nginx™ Plus®
 
+Forked from `hellgate75/nginx-plus`.
+
 
 ### Introduction ###
 
@@ -13,9 +15,9 @@ https://www.nginx.com/products/
 
 Get more information bout this project at :
 
-* [Nginx-plus docker image GitHub repository](https://github.com/hellgate75/nginx-plus)
-* [Nginx-plus docker image Wiki](https://github.com/hellgate75/nginx-plus/wiki)
-* [Nginx-plus docker image GitHub Page](https://hellgate75.github.io/nginx-plus/)
+* [Nginx-plus docker image GitHub repository](https://github.com/svenagnew/nginx-plus)
+* [Nginx-plus docker image Wiki](https://github.com/svenagnew/nginx-plus/wiki)
+* [Nginx-plus docker image GitHub Page](https://svenagnew.github.io/nginx-plus/)
 
 
 ### Goals ###
