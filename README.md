@@ -17,9 +17,17 @@ https://www.nginx.com/products/
 This docker images has been designed to be a test, development, environment for Nginx™ Plus® features.
 *No warranties for production use.*
 
+### Building ###
+
+Bear in mind that before building the project, you will need to download and install your own Nginx™ Plus® client certificates.
+
+This can be down by placing the files `nginx-repo.crt` and `nginx-repo.key` in the root of this project.
+
+You can then either take advantage of a pipeline build process or simply use `docker build -t nginx-plus-test:latest` locally.
+
 ### Docker Image features ###
 
-Volumes : /root/nginx/certs, /root/nginx/repo-certs, /root/nginx/conf.d, /root/nginx/certs, /usr/share/nginx/html
+Volumes : `/root/nginx/certs`, `/root/nginx/repo-certs`, `/root/nginx/conf.d`, `/root/nginx/certs`, `/usr/share/nginx/html`
 
 `/root/nginx/certs` :
 
@@ -48,8 +56,6 @@ Ports: 80, 443
 Nginx™ Plus® container environment variables:
 
 * `NGINX_CONF_TARGZ_URL` : URL provided to download a tar gz file containing a few folders : `conf`, `conf.d`, `repo-certs`, `html` and `certs` to be decompressed in folder `/root/nginx`. (default: "" - see *Docker-Image-features* for more).
-
-
 
 ### Sample command ###
 
